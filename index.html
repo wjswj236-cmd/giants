@@ -55,16 +55,15 @@
         // --- データ定義 ---
         const PLAYERS_DATA = [
             { id: 1, name: '阿部 慎之助', position: '監督', number: '83', imageUrl: 'https://prod-giants-site.imagewave.pictures/2sBggzpWpHFgyCZ8VV3r4L?width=828' },
-            { id: 2, name: '二岡 智宏', position: 'ヘッド兼打撃チーフコーチ', number: '76', imageUrl: 'https://prod-giants-site.imagewave.pictures/E8NPU9pa7kAxRXgCk8QbE5?width=828' },
+            { id: 2, name: '石井 琢朗', position: '二軍監督', number: '75', imageUrl: 'https://cdn.findfriends.jp/img.sp.baseball/show_img.php?id=73052&contents_id=p_page_097' },
             { id: 3, name: '戸郷 翔征', position: '投手', number: '20', imageUrl: 'https://prod-giants-site.imagewave.pictures/U4WPZ6x3KjRzuakHPaKc8Y?width=828' },
-            { id: 4, name: '大勢', position: '投手', number: '15', imageUrl: 'https://prod-giants-site.imagewave.pictures/WgbAHKjPfWrff6AJxnX2EJ?width=384' },
+            { id: 4, name: '大勢', position: '投手', number: '15', imageUrl: 'https://prod-giants-site.imagewave.pictures/WgbAHKjPfWrff6AJxnX2EJ?width=828' },
             { id: 5, name: '大城 卓三', position: '捕手', number: '24', imageUrl: 'https://prod-giants-site.imagewave.pictures/S7bjtCuRDKXbCNubd6QmJ9?width=1920' },
             { id: 6, name: '岸田 行倫', position: '捕手', number: '27', imageUrl: 'https://prod-giants-site.imagewave.pictures/obZGo3NAiKMxbfgMY7ZQoJ?width=1920' },
             { id: 8, name: '坂本 勇人', position: '内野手', number: '6', imageUrl: 'https://prod-giants-site.imagewave.pictures/BT34z7RtBvrRrMDQaGYZT9?width=3840' },
             { id: 9, name: '吉川 尚輝', position: '内野手', number: '2', imageUrl: 'https://prod-giants-site.imagewave.pictures/StvCfnoJ6NcStZPnRhyrYo?width=828' },
-            { id: 10, name: '門脇 誠', position: '内野手', number: '35', imageUrl: 'https://prod-giants-site.imagewave.pictures/xwYqmb7eU5k8NsngZeiVxG?width=828' },
+            { id: 10, name: '門脇 誠', position: '内野手', number: '5', imageUrl: 'https://prod-giants-site.imagewave.pictures/xwYqmb7eU5k8NsngZeiVxG?width=828' },
             { id: 11, name: '丸 佳浩', position: '外野手', number: '8', imageUrl: 'https://prod-giants-site.imagewave.pictures/45B86NvMi9hjZb4YEXHG6K?width=828' },
-            { id: 12, name: '長野 久義', position: '外野手', number: '7', imageUrl: 'https://prod-giants-site.imagewave.pictures/KNfifqZVpFjwVnRyabTeYV?width=828' },
             { id: 13, name: 'リチャード', position: '内野手', number: '52', imageUrl: 'https://prod-giants-site.imagewave.pictures/hqySEbnDPPkfxBdt3SFF6J?width=828' },
             { id: 14, name: '西舘 勇陽', position: '投手', number: '17', imageUrl: 'https://prod-giants-site.imagewave.pictures/AW2GhCQqA6uEXhJpRog2C?width=828' },
             { id: 15, name: '山﨑 伊織', position: '投手', number: '19', imageUrl: 'https://prod-giants-site.imagewave.pictures/fyqiQHGtdzug9mJnMKxwVK?width=828' },
@@ -78,6 +77,14 @@
             { id: 23, name: '田中 将大', position: '投手', number: '11', imageUrl: 'https://prod-giants-site.imagewave.pictures/3gJNkGf4jyQ59osweCjbMm?width=828' },
             { id: 24, name: '小林 誠司', position: '捕手', number: '22', imageUrl: 'https://prod-giants-site.imagewave.pictures/isNzgo8SUMdNaRQLDCvFKg?width=828' },
             { id: 25, name: '甲斐 拓也', position: '捕手', number: '10', imageUrl: 'https://prod-giants-site.imagewave.pictures/wbaRNwbA2xPBZWDwkCbcuN?width=828' },
+            { id: 26, name: '増田 大輝', position: '内野手', number: '0', imageUrl: 'https://prod-giants-site.imagewave.pictures/DaSKaRAGBwmc3j5qLCiWZW?width=828' },
+            { id: 27, name: '石塚 裕惺', position: '内野手', number: '23', imageUrl: 'https://prod-giants-site.imagewave.pictures/gR33kKkymg5HfCRHaoWNEe?width=828' },
+            { id: 28, name: '浦田 俊輔', position: '内野手', number: '32', imageUrl: 'https://prod-giants-site.imagewave.pictures/ku7z8n2HrT6hh6mTRTbvLn?width=828' },
+            { id: 29, name: '泉口 友汰', position: '内野手', number: '35', imageUrl: 'https://prod-giants-site.imagewave.pictures/vx5u2aEe5NpvLNPHFuvuLd?width=828' },
+            { id: 30, name: 'キャベッジ', position: '外野手', number: '13', imageUrl: 'https://prod-giants-site.imagewave.pictures/kyBK2GqaZYwwmGsUv2k5rn?width=828' },
+            { id: 31, name: '佐々木 俊輔', position: '外野手', number: '44', imageUrl: 'https://prod-giants-site.imagewave.pictures/4DJ2CLUC2yirGgSXjuKu5W?width=828' },
+            { id: 32, name: '若林 楽人', position: '外野手', number: '59', imageUrl: 'https://prod-giants-site.imagewave.pictures/ZfDg5p4u5ZRJup23qPp8cW?width=828' },
+            { id: 33, name: '竹丸 和幸', position: '投手', number: '21', imageUrl: 'https://i.daily.jp/baseball/2025/10/23/Images/f_19623394.jpg' },
         ];
 
         // --- アイコンコンポーネント (Lucide代替) ---

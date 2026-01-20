@@ -50,7 +50,7 @@
         // 1. GASコードを修正し、「新しいデプロイ」または「デプロイの管理>新バージョン」で更新する
         // 2. アクセス設定が「自分」「全員」になっていることを確認する
         // 3. 発行されたURLを下の引用符の中に貼り付ける
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxI-DFXifx7rHl8edlnSaLpGPBVo4kw1i87-5eKzisuZh0eLU8A0waMJr8xq1XWy-l2/exec'; 
+        const GOOGLE_SCRIPT_URL = ''https://script.google.com/macros/s/AKfycbxI-DFXifx7rHl8edlnSaLpGPBVo4kw1i87-5eKzisuZh0eLU8A0waMJr8xq1XWy-l2/exec'; 
 
         // --- データ定義 ---
         // ふりがな(kana)を追加して、正しくあいうえお順になるようにしました
@@ -88,6 +88,7 @@
             { id: 33, name: '竹丸 和幸', kana: 'たけまる かずゆき', position: '投手（ドラフト1位の新人）', number: '21', imageUrl: 'https://i.daily.jp/baseball/2025/10/23/Images/f_19623394.jpg' },
             { id: 34, name: '則本 昂大', kana: 'のりもと たかひろ', position: '投手', number: '43', imageUrl: 'https://raw.githubusercontent.com/wjswj236-cmd/giants/refs/heads/main/takahiro%20norimoto.png' },
         ];
+
         // --- アイコンコンポーネント (Lucide代替) ---
         const Icon = ({ children, className, size = 24 }) => (
             <svg 
@@ -425,6 +426,7 @@
                                                         <div className="text-sm text-gray-400 mb-1">正解は...</div>
                                                         <div className="text-3xl font-bold text-gray-800 border-l-4 border-[#f97709] pl-4 py-2 bg-gray-50 rounded-r-lg">
                                                             {currentQuestion.name}
+                                                            <span className="text-lg font-normal text-gray-600 ml-2">（{currentQuestion.kana}）</span>
                                                         </div>
                                                         <div className="mt-2 text-gray-600 pl-5 flex gap-4">
                                                             <span className="bg-gray-200 px-2 py-0.5 rounded text-sm font-bold">

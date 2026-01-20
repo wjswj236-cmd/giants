@@ -53,41 +53,43 @@
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxI-DFXifx7rHl8edlnSaLpGPBVo4kw1i87-5eKzisuZh0eLU8A0waMJr8xq1XWy-l2/exec'; 
 
         // --- データ定義 ---
+        // ふりがな(kana)を追加して、正しくあいうえお順になるようにしました
         const PLAYERS_DATA = [
-            { id: 1, name: '阿部 慎之助', position: '監督', number: '83', imageUrl: 'https://prod-giants-site.imagewave.pictures/2sBggzpWpHFgyCZ8VV3r4L?width=828' },
-            { id: 2, name: '石井 琢朗', position: '二軍監督', number: '75', imageUrl: 'https://cdn.findfriends.jp/img.sp.baseball/show_img.php?id=73052&contents_id=p_page_097' },
-            { id: 3, name: '戸郷 翔征', position: '投手', number: '20', imageUrl: 'https://prod-giants-site.imagewave.pictures/U4WPZ6x3KjRzuakHPaKc8Y?width=828' },
-            { id: 4, name: '大勢', position: '投手', number: '15', imageUrl: 'https://prod-giants-site.imagewave.pictures/WgbAHKjPfWrff6AJxnX2EJ?width=828' },
-            { id: 5, name: '大城 卓三', position: '捕手', number: '24', imageUrl: 'https://prod-giants-site.imagewave.pictures/S7bjtCuRDKXbCNubd6QmJ9?width=1920' },
-            { id: 6, name: '岸田 行倫', position: '捕手', number: '27', imageUrl: 'https://prod-giants-site.imagewave.pictures/obZGo3NAiKMxbfgMY7ZQoJ?width=1920' },
-            { id: 8, name: '坂本 勇人', position: '内野手', number: '6', imageUrl: 'https://prod-giants-site.imagewave.pictures/BT34z7RtBvrRrMDQaGYZT9?width=3840' },
-            { id: 9, name: '吉川 尚輝', position: '内野手', number: '2', imageUrl: 'https://prod-giants-site.imagewave.pictures/StvCfnoJ6NcStZPnRhyrYo?width=828' },
-            { id: 10, name: '門脇 誠', position: '内野手', number: '5', imageUrl: 'https://prod-giants-site.imagewave.pictures/xwYqmb7eU5k8NsngZeiVxG?width=828' },
-            { id: 11, name: '丸 佳浩', position: '外野手', number: '8', imageUrl: 'https://prod-giants-site.imagewave.pictures/45B86NvMi9hjZb4YEXHG6K?width=828' },
-            { id: 13, name: 'リチャード', position: '内野手', number: '52', imageUrl: 'https://prod-giants-site.imagewave.pictures/hqySEbnDPPkfxBdt3SFF6J?width=828' },
-            { id: 14, name: '西舘 勇陽', position: '投手', number: '17', imageUrl: 'https://prod-giants-site.imagewave.pictures/AW2GhCQqA6uEXhJpRog2C?width=828' },
-            { id: 15, name: '山﨑 伊織', position: '投手', number: '19', imageUrl: 'https://prod-giants-site.imagewave.pictures/fyqiQHGtdzug9mJnMKxwVK?width=828' },
-            { id: 16, name: '中川 皓太', position: '投手', number: '41', imageUrl: 'https://prod-giants-site.imagewave.pictures/w6YyTz5wXRJ3iPQ2okvSyQ?width=828' },
-            { id: 17, name: '田中 瑛斗', position: '投手', number: '45', imageUrl: 'https://prod-giants-site.imagewave.pictures/TbgJaUdRidLPbRnstXUraX?width=828' },
-            { id: 18, name: 'バルドナード', position: '投手', number: '49', imageUrl: 'https://prod-giants-site.imagewave.pictures/2BnVQ2Yb7TmkbtJjXD5uwY?width=828' },
-            { id: 19, name: '宮原 駿介', position: '投手', number: '57', imageUrl: 'https://prod-giants-site.imagewave.pictures/9vg2zcpRKDc9TeNtwbqdL7?width=828' },
-            { id: 20, name: '船迫 大雅', position: '投手', number: '58', imageUrl: 'https://prod-giants-site.imagewave.pictures/PHDsns8JjcZhy5P29Qhc64?width=828' },
-            { id: 21, name: '平内 龍太', position: '投手', number: '66', imageUrl: 'https://prod-giants-site.imagewave.pictures/qfkwLapxeytVz9PWvtC2Lm?width=828' },
-            { id: 22, name: 'マルティネス', position: '投手', number: '92', imageUrl: 'https://prod-giants-site.imagewave.pictures/ikCuV65rcCmUwLRbQ2PrwD?width=828' },
-            { id: 23, name: '田中 将大', position: '投手', number: '11', imageUrl: 'https://prod-giants-site.imagewave.pictures/3gJNkGf4jyQ59osweCjbMm?width=828' },
-            { id: 24, name: '小林 誠司', position: '捕手', number: '22', imageUrl: 'https://prod-giants-site.imagewave.pictures/isNzgo8SUMdNaRQLDCvFKg?width=828' },
-            { id: 25, name: '甲斐 拓也', position: '捕手', number: '10', imageUrl: 'https://prod-giants-site.imagewave.pictures/wbaRNwbA2xPBZWDwkCbcuN?width=828' },
-            { id: 26, name: '増田 大輝', position: '内野手', number: '0', imageUrl: 'https://prod-giants-site.imagewave.pictures/DaSKaRAGBwmc3j5qLCiWZW?width=828' },
-            { id: 27, name: '石塚 裕惺', position: '内野手', number: '23', imageUrl: 'https://prod-giants-site.imagewave.pictures/gR33kKkymg5HfCRHaoWNEe?width=828' },
-            { id: 28, name: '浦田 俊輔', position: '内野手', number: '32', imageUrl: 'https://prod-giants-site.imagewave.pictures/ku7z8n2HrT6hh6mTRTbvLn?width=828' },
-            { id: 29, name: '泉口 友汰', position: '内野手', number: '35', imageUrl: 'https://prod-giants-site.imagewave.pictures/vx5u2aEe5NpvLNPHFuvuLd?width=828' },
-            { id: 30, name: 'キャベッジ', position: '外野手', number: '13', imageUrl: 'https://prod-giants-site.imagewave.pictures/kyBK2GqaZYwwmGsUv2k5rn?width=828' },
-            { id: 31, name: '佐々木 俊輔', position: '外野手', number: '44', imageUrl: 'https://prod-giants-site.imagewave.pictures/4DJ2CLUC2yirGgSXjuKu5W?width=828' },
-            { id: 32, name: '若林 楽人', position: '外野手', number: '59', imageUrl: 'https://prod-giants-site.imagewave.pictures/ZfDg5p4u5ZRJup23qPp8cW?width=828' },
-            { id: 33, name: '竹丸 和幸', position: '投手（ドラフト1位の新人）', number: '21', imageUrl: 'https://i.daily.jp/baseball/2025/10/23/Images/f_19623394.jpg' },
-            { id: 34, name: '則本 昂大', position: '投手', number: '43', imageUrl: 'https://raw.githubusercontent.com/wjswj236-cmd/giants/refs/heads/main/takahiro%20norimoto.png' },
+            { id: 1, name: '阿部 慎之助', kana: 'あべ しんのすけ', position: '監督', number: '83', imageUrl: 'https://prod-giants-site.imagewave.pictures/2sBggzpWpHFgyCZ8VV3r4L?width=828' },
+            { id: 2, name: '二岡 智宏', kana: 'におか ともひろ', position: 'ヘッド兼打撃チーフコーチ', number: '76', imageUrl: 'https://prod-giants-site.imagewave.pictures/E8NPU9pa7kAxRXgCk8QbE5?width=828' },
+            { id: 3, name: '戸郷 翔征', kana: 'とごう しょうせい', position: '投手', number: '20', imageUrl: 'https://prod-giants-site.imagewave.pictures/U4WPZ6x3KjRzuakHPaKc8Y?width=828' },
+            { id: 4, name: '大勢', kana: 'たいせい', position: '投手', number: '15', imageUrl: 'https://prod-giants-site.imagewave.pictures/WgbAHKjPfWrff6AJxnX2EJ?width=384' },
+            { id: 5, name: '大城 卓三', kana: 'おおしろ たくみ', position: '捕手', number: '24', imageUrl: 'https://prod-giants-site.imagewave.pictures/S7bjtCuRDKXbCNubd6QmJ9?width=1920' },
+            { id: 6, name: '岸田 行倫', kana: 'きしだ ゆきのり', position: '捕手', number: '27', imageUrl: 'https://prod-giants-site.imagewave.pictures/obZGo3NAiKMxbfgMY7ZQoJ?width=1920' },
+            { id: 7, name: '岡本 和真', kana: 'おかもと かずま', position: '内野手', number: '25', imageUrl: 'https://prod-giants-site.imagewave.pictures/DgagiB5oVDvwsGSCfcvjGR?width=3840' },
+            { id: 8, name: '坂本 勇人', kana: 'さかもと はやと', position: '内野手', number: '6', imageUrl: 'https://prod-giants-site.imagewave.pictures/BT34z7RtBvrRrMDQaGYZT9?width=3840' },
+            { id: 9, name: '吉川 尚輝', kana: 'よしかわ なおき', position: '内野手', number: '2', imageUrl: 'https://prod-giants-site.imagewave.pictures/StvCfnoJ6NcStZPnRhyrYo?width=828' },
+            { id: 10, name: '門脇 誠', kana: 'かどわき まこと', position: '内野手', number: '35', imageUrl: 'https://prod-giants-site.imagewave.pictures/xwYqmb7eU5k8NsngZeiVxG?width=828' },
+            { id: 11, name: '丸 佳浩', kana: 'まる よしひろ', position: '外野手', number: '8', imageUrl: 'https://prod-giants-site.imagewave.pictures/45B86NvMi9hjZb4YEXHG6K?width=828' },
+            { id: 12, name: '長野 久義', kana: 'ちょうの ひさよし', position: '外野手', number: '7', imageUrl: 'https://prod-giants-site.imagewave.pictures/KNfifqZVpFjwVnRyabTeYV?width=828' },
+            { id: 13, name: 'リチャード', kana: 'りちゃーど', position: '内野手', number: '52', imageUrl: 'https://prod-giants-site.imagewave.pictures/hqySEbnDPPkfxBdt3SFF6J?width=828' },
+            { id: 14, name: '西舘 勇陽', kana: 'にしだて ゆうひ', position: '投手', number: '17', imageUrl: 'https://prod-giants-site.imagewave.pictures/AW2GhCQqA6uEXhJpRog2C?width=828' },
+            { id: 15, name: '山﨑 伊織', kana: 'やまさき いおり', position: '投手', number: '19', imageUrl: 'https://prod-giants-site.imagewave.pictures/fyqiQHGtdzug9mJnMKxwVK?width=828' },
+            { id: 16, name: '中川 皓太', kana: 'なかがわ こうた', position: '投手', number: '41', imageUrl: 'https://prod-giants-site.imagewave.pictures/w6YyTz5wXRJ3iPQ2okvSyQ?width=828' },
+            { id: 17, name: '田中 瑛斗', kana: 'たなか えいと', position: '投手', number: '45', imageUrl: 'https://prod-giants-site.imagewave.pictures/TbgJaUdRidLPbRnstXUraX?width=828' },
+            { id: 18, name: 'バルドナード', kana: 'ばるどなーど', position: '投手', number: '49', imageUrl: 'https://prod-giants-site.imagewave.pictures/2BnVQ2Yb7TmkbtJjXD5uwY?width=828' },
+            { id: 19, name: '宮原 駿介', kana: 'みやはら しゅんすけ', position: '投手', number: '57', imageUrl: 'https://prod-giants-site.imagewave.pictures/9vg2zcpRKDc9TeNtwbqdL7?width=828' },
+            { id: 20, name: '船迫 大雅', kana: 'ふなばさま ひろまさ', position: '投手', number: '58', imageUrl: 'https://prod-giants-site.imagewave.pictures/PHDsns8JjcZhy5P29Qhc64?width=828' },
+            { id: 21, name: '平内 龍太', kana: 'へいない りゅうた', position: '投手', number: '66', imageUrl: 'https://prod-giants-site.imagewave.pictures/qfkwLapxeytVz9PWvtC2Lm?width=828' },
+            { id: 22, name: 'マルティネス', kana: 'まるてぃねす', position: '投手', number: '92', imageUrl: 'https://prod-giants-site.imagewave.pictures/ikCuV65rcCmUwLRbQ2PrwD?width=828' },
+            { id: 23, name: '田中 将大', kana: 'たなか まさひろ', position: '投手', number: '11', imageUrl: 'https://prod-giants-site.imagewave.pictures/3gJNkGf4jyQ59osweCjbMm?width=828' },
+            { id: 24, name: '小林 誠司', kana: 'こばやし せいじ', position: '捕手', number: '22', imageUrl: 'https://prod-giants-site.imagewave.pictures/isNzgo8SUMdNaRQLDCvFKg?width=828' },
+            { id: 25, name: '甲斐 拓也', kana: 'かい たくや', position: '捕手', number: '10', imageUrl: 'https://prod-giants-site.imagewave.pictures/wbaRNwbA2xPBZWDwkCbcuN?width=828' },
+            { id: 26, name: '増田 大輝', kana: 'ますだ だいき', position: '内野手', number: '0', imageUrl: 'https://prod-giants-site.imagewave.pictures/DaSKaRAGBwmc3j5qLCiWZW?width=828' },
+            { id: 27, name: '石塚 裕惺', kana: 'いしづか ゆうせい', position: '内野手', number: '23', imageUrl: 'https://prod-giants-site.imagewave.pictures/gR33kKkymg5HfCRHaoWNEe?width=828' },
+            { id: 28, name: '浦田 俊輔', kana: 'うらた しゅんすけ', position: '内野手', number: '32', imageUrl: 'https://prod-giants-site.imagewave.pictures/ku7z8n2HrT6hh6mTRTbvLn?width=828' },
+            { id: 29, name: '泉口 友汰', kana: 'いずぐち ゆうた', position: '内野手', number: '35', imageUrl: 'https://prod-giants-site.imagewave.pictures/vx5u2aEe5NpvLNPHFuvuLd?width=828' },
+            { id: 30, name: 'キャベッジ', kana: 'きゃべっじ', position: '外野手', number: '13', imageUrl: 'https://prod-giants-site.imagewave.pictures/kyBK2GqaZYwwmGsUv2k5rn?width=828' },
+            { id: 31, name: '佐々木 俊輔', kana: 'ささき しゅんすけ', position: '外野手', number: '44', imageUrl: 'https://prod-giants-site.imagewave.pictures/4DJ2CLUC2yirGgSXjuKu5W?width=828' },
+            { id: 32, name: '若林 楽人', kana: 'わかばやし がくと', position: '外野手', number: '59', imageUrl: 'https://prod-giants-site.imagewave.pictures/ZfDg5p4u5ZRJup23qPp8cW?width=828' },
+            { id: 33, name: '竹丸 和幸', kana: 'たけまる かずゆき', position: '投手（ドラフト1位の新人）', number: '21', imageUrl: 'https://i.daily.jp/baseball/2025/10/23/Images/f_19623394.jpg' },
+            { id: 34, name: '則本 昂大', kana: 'のりもと たかひろ', position: '投手', number: '43', imageUrl: 'https://raw.githubusercontent.com/wjswj236-cmd/giants/refs/heads/main/takahiro%20norimoto.png' },
         ];
-
         // --- アイコンコンポーネント (Lucide代替) ---
         const Icon = ({ children, className, size = 24 }) => (
             <svg 
@@ -114,20 +116,19 @@
         const { useState, useEffect, useMemo } = React;
 
         function App() {
-            const [appState, setAppState] = useState('start'); // 'start' | 'playing' | 'finished'
+            const [appState, setAppState] = useState('start');
             const [workerName, setWorkerName] = useState('');
             
             const [quizQueue, setQuizQueue] = useState([]);
             const [currentIndex, setCurrentIndex] = useState(0);
             const [selectedName, setSelectedName] = useState('');
-            const [quizStep, setQuizStep] = useState('waiting'); // 'waiting' | 'answered'
+            const [quizStep, setQuizStep] = useState('waiting');
             const [isCorrect, setIsCorrect] = useState(false);
             const [score, setScore] = useState(0);
             const [imageError, setImageError] = useState(false);
 
-            // 送信関連
             const [isSubmitting, setIsSubmitting] = useState(false);
-            const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error'
+            const [submitStatus, setSubmitStatus] = useState(null);
 
             const startGame = () => {
                 if (!workerName.trim()) return;
@@ -149,10 +150,11 @@
 
             const currentQuestion = quizQueue[currentIndex];
 
+            // 修正点: 'kana' プロパティを使ってあいうえお順にソート
             const nameOptions = useMemo(() => {
                 return [...PLAYERS_DATA]
-                    .map(p => p.name)
-                    .sort((a, b) => a.localeCompare(b, 'ja'));
+                    .sort((a, b) => a.kana.localeCompare(b.kana, 'ja'))
+                    .map(p => p.name);
             }, []);
 
             const handleAnswer = () => {
@@ -180,7 +182,6 @@
             };
 
             const sendDataToSheet = async (finalScore) => {
-                // URLが正しく設定されているかチェック
                 if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('script.google.com/macros/s/AKfycbx...')) {
                     alert("【設定エラー】\nGASのURLが設定されていないか、サンプルのままです。\nコード内の GOOGLE_SCRIPT_URL を書き換えてください。");
                     setSubmitStatus('error');
@@ -189,7 +190,6 @@
 
                 setIsSubmitting(true);
                 try {
-                    // 確実に送れるよう URLSearchParams (x-www-form-urlencoded) を使用
                     const params = new URLSearchParams();
                     params.append('date', new Date().toLocaleString());
                     params.append('name', workerName);
@@ -204,7 +204,6 @@
                         body: params.toString(),
                     });
                     
-                    // no-corsのため成功判定はできませんが、完了とみなします
                     setSubmitStatus('success');
                 } catch (error) {
                     console.error('送信エラー', error);
